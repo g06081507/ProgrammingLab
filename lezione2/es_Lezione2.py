@@ -7,11 +7,13 @@ def conta(parola,lettera):
     return conta
 
 def numeroPrimo():
-    print("Spara un numero e ti dirò se è primo")
+    print("Inserisci un numero e ti dirò se è primo")
     numero=int(input())
     print(primo(numero))
 
 def primo(numero):
+    if numero<=1:
+        return "Il numero non è primo"
     for i in range(2,numero-1):
         if numero%i==0:
             return "Il numero non è primo"
@@ -52,6 +54,9 @@ def sommatoria():
     while numero!=0:
         print("Inserisci numero:")
         numero=int(input())
+        if not isinstance(numero,int):
+            print("Devi inserire un numero intero!")
+            continue
         somma+=numero
     print(f"Sommatoria dei numeri inseriti:{somma}")
 
@@ -66,6 +71,7 @@ def fattoriale():
 def contaVocali():
     print("Inserisci una frase e ti dirò quante vocali contiene")
     stringa=input()
+    stringa=stringa.lower()
     conta=0
     for i in range (len(stringa)):
         if(stringa[i]=="a" or stringa[i]=="e" or stringa[i]=="i" or stringa[i]=="o" or stringa[i]=="u"):
@@ -98,4 +104,4 @@ def tipoTriangolo():
 
 
 print("\n\nESERCIZI LEZIONE 2-3\n")
-tipoTriangolo() #chiamata di funzione 
+numeroPrimo() #chiamata di funzione
